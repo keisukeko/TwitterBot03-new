@@ -57,7 +57,7 @@ app.get("/tweet", (req, res) => {
             "❤️‍🔥",
             "💯"
         ]
-        var random = nodes[Math.floor(Math.random()* emojis.length)];
+        var random = emojis[Math.floor(Math.random()* emojis.length)];
         console.log(random)
         var hashTag = "\n#TikTokLite #ポイ活 #ポイ活初心者"
         var tweet = text + random + hashTag;
