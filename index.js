@@ -30,7 +30,10 @@ app.get("/tweet", (req, res) => {
         for(var i = 0; i < random; i++){
             blank += " ";
         }
-        client.v2.tweet(text + blank); 
+        console.log(random)
+        var tweet = text + blank;
+        console.log(tweet)
+        client.v2.tweet(tweet); 
     } catch (err) {
         console.log(err);
     }
