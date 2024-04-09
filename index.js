@@ -24,7 +24,7 @@ const app = express();
 
 app.get("/tweet", (req, res) => {
     try {
-        var text = "https://lite.tiktok.com/t/ZSFgLwgMH/\n今なら↓をやれば誰でも4500円ゲットできるよ\n①Wi-Fiを切る\n②上のリンクを開いてアプリをインストール\n③アプリストアの開くは押さずにもう一度リンクを押してアプリを開いて登録！\n④あとは毎日タスクをクリアするだけ"
+        var text = "【期間限定】今なら誰でも4500円ゲットできるよ\n招待URL: https://lite.tiktok.com/t/ZSFpk5d9b/\nルールを守らないとお金がもらえないので必ず↓を見て登録してね"
         var random = Math.floor(Math.random() * (30));
         const emojis = [
             "😀",
@@ -59,8 +59,9 @@ app.get("/tweet", (req, res) => {
         ]
         var random = emojis[Math.floor(Math.random()* emojis.length)];
         console.log(random)
-        var hashTag = "\n#TikTokLite #ポイ活 #ポイ活初心者"
-        var tweet = text + random + hashTag;
+        var hashTag = "\n#TikTokLite #ポイ活"
+        var link = "\nhttps://know-you.hatenablog.com/entry/2024/04/09/221651"
+        var tweet = text + random + hashTag + link;
         console.log(tweet)
         client.v2.tweet(tweet); 
     } catch (err) {
