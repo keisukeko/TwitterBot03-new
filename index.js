@@ -24,7 +24,7 @@ const app = express();
 
 app.get("/tweet", (req, res) => {
     try {
-        var text = "【期間限定】今なら誰でも4500円ゲットできるよ\n招待URL: https://lite.tiktok.com/t/ZSFpk5d9b/\nルールを守らないとお金がもらえないので必ず↓を見て登録してね"
+        var text = "【期間限定】今なら誰でも4500円ゲットできるよ\n招待URL: " + process.env.TIKTOK_URL + "\nルールを守らないとお金がもらえないので必ず↓を見て登録してね"
         var random = Math.floor(Math.random() * (30));
         const emojis = [
             "😀",
@@ -59,8 +59,8 @@ app.get("/tweet", (req, res) => {
         ]
         var random = emojis[Math.floor(Math.random()* emojis.length)];
         console.log(random)
-        var hashTag = "\n#TikTokLite #ポイ活"
-        var link = "\nhttps://know-you.hatenablog.com/entry/2024/04/09/221651"
+        var hashTag = "\n#TikTokLite #ポイ活";
+        var link = "\n" + process.env.HATENA_URL;
         var tweet = text + random + hashTag + link;
         console.log(tweet)
         client.v2.tweet(tweet); 
