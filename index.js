@@ -119,7 +119,7 @@ const select = async () => {
                 sql
             ).then(result => {
                 if (result.rows) {
-                    client.v2.tweet(result.rows[0].content + " #PR #Amazon #相互フォロー");
+                    client.v2.tweet(result.rows[0].content + " #PR #Amazon");
                 }
             })
                 .catch(err => {
